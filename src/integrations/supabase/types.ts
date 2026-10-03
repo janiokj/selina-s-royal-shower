@@ -14,13 +14,88 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      gift_claims: {
+        Row: {
+          created_at: string
+          gift_id: string
+          guest_contact: string
+          guest_name: string
+          id: string
+          message: string | null
+        }
+        Insert: {
+          created_at?: string
+          gift_id: string
+          guest_contact: string
+          guest_name: string
+          id?: string
+          message?: string | null
+        }
+        Update: {
+          created_at?: string
+          gift_id?: string
+          guest_contact?: string
+          guest_name?: string
+          id?: string
+          message?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "gift_claims_gift_id_fkey"
+            columns: ["gift_id"]
+            isOneToOne: true
+            referencedRelation: "gifts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      gifts: {
+        Row: {
+          category: string
+          claimed: boolean
+          created_at: string
+          description: string
+          emoji: string
+          id: string
+          name: string
+          sort_order: number
+        }
+        Insert: {
+          category?: string
+          claimed?: boolean
+          created_at?: string
+          description?: string
+          emoji?: string
+          id?: string
+          name: string
+          sort_order?: number
+        }
+        Update: {
+          category?: string
+          claimed?: boolean
+          created_at?: string
+          description?: string
+          emoji?: string
+          id?: string
+          name?: string
+          sort_order?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_gift: {
+        Args: {
+          _contact: string
+          _gift_id: string
+          _message: string
+          _name: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
