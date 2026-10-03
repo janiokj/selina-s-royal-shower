@@ -153,7 +153,7 @@ function ClaimDialog({
       alert("Que pena! Alguém foi mais rápido e já escolheu este presente.");
       return onTaken();
     }
-    onDone(name.trim().split(" ")[0]);
+    onDone(name.trim().split(" ")[0] ?? name.trim());
   }
 
   const input = "neu-inset w-full rounded-2xl px-5 py-3 outline-none placeholder:text-muted-foreground/70 focus:ring-2 focus:ring-ring";
