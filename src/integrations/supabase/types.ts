@@ -96,6 +96,18 @@ export type Database = {
         }
         Returns: boolean
       }
+      list_claims: {
+        Args: never
+        Returns: {
+          claimed_at: string
+          gift_category: string
+          gift_emoji: string
+          gift_name: string
+          guest_contact: string
+          guest_name: string
+          message: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

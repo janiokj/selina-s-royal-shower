@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/selina-hero.jpg";
 import { GiftList } from "@/components/GiftList";
 
@@ -113,6 +113,12 @@ function Index() {
         <p className="mt-2 text-sm text-muted-foreground">
           com amor, Tamara, Brandon e a pequena Selina 💗
         </p>
+        <Link
+          to="/acompanhamento"
+          className="mt-6 inline-block text-xs text-muted-foreground/70 underline-offset-4 hover:text-primary hover:underline"
+        >
+          👑 área da família
+        </Link>
       </footer>
     </main>
   );
